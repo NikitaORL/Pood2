@@ -63,11 +63,11 @@ namespace Pood
         private void button7_Click(object sender, EventArgs e)
         {
             open = new OpenFileDialog();
-            open.InitialDirectory = @"C:\Users\opilane\source\repos\nastjRadasheva\Pood\images";
+            open.InitialDirectory = @"C:\Users\opilane\source\repos\Pood2\Pood2/images";
             open.Multiselect = true;
             open.Filter = "Images Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
 
-            FileInfo open_info = new FileInfo(@"C:\Users\opilane\source\repos\nastjRadasheva\Pood\images" + open.FileName);
+            FileInfo open_info = new FileInfo(@"C:\Users\opilane\source\repos\Pood2\Pood2/images" + open.FileName);
             if (open.ShowDialog() == DialogResult.OK && Toode_txt.Text != null)
             {
                 save = new SaveFileDialog();
