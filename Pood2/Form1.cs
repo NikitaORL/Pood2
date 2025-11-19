@@ -52,7 +52,7 @@ namespace Pood
             Kogus_txt.Text = "";
             Hind_txt.Text = "";
             Kat_box1.SelectedItem = null;
-            using (FileStream fs = new FileStream(Path.Combine(Path.GetFullPath(@"..\..\images"), "rimi.png"), FileMode.Open, FileAccess.Read))
+            using (FileStream fs = new FileStream(Path.Combine(Path.GetFullPath(@"..\..\images"), "nikita.png"), FileMode.Open, FileAccess.Read))
             {
                 toode_pb.Image = Image.FromStream(fs);
             }
@@ -144,7 +144,7 @@ namespace Pood
                 }
             }
             dataGridView1.Columns.Add(combo_kat);
-            toode_pb.Image = Image.FromFile(Path.Combine(Path.GetFullPath(@"..\..\images"), "rimi.png"));
+            toode_pb.Image = Image.FromFile(Path.Combine(Path.GetFullPath(@"..\..\images"), "nikita.png"));
             connect.Close();
         }
         private void lisaKATbtn_Click(object sender, EventArgs e)
@@ -430,6 +430,11 @@ namespace Pood
             kategooriad.ImageList = iconsList;
             connect.Close();
             this.Controls.Add(kategooriad);
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
 
         }
 
