@@ -433,10 +433,6 @@ namespace Pood
 
         }
 
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
 
         public void Naitakategooriad()
         {
@@ -459,7 +455,17 @@ namespace Pood
             }
             connect.Close();
         }
+        private void button8_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            connect.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT Pilt FROM ToodeTabel", connect);
+            adapter.Fill(dt);
+            connect.Close();
 
-
+            Form2 shopForm = new Form2();
+            shopForm.LoadProducts(dt);
+            shopForm.Show();
+        }
     }
 }

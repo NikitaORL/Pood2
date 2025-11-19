@@ -46,8 +46,7 @@
             this.kustutabtn = new System.Windows.Forms.Button();
             this.puhustaBTN = new System.Windows.Forms.Button();
             this.otsi_fail_click = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.pood_click = new System.Windows.Forms.Button();
             this.Kat_box1 = new System.Windows.Forms.ComboBox();
             this.naitabtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.toode_pb)).BeginInit();
@@ -202,7 +201,7 @@
             // 
             // otsi_fail_click
             // 
-            this.otsi_fail_click.Location = new System.Drawing.Point(473, 228);
+            this.otsi_fail_click.Location = new System.Drawing.Point(337, 230);
             this.otsi_fail_click.Name = "otsi_fail_click";
             this.otsi_fail_click.Size = new System.Drawing.Size(75, 23);
             this.otsi_fail_click.TabIndex = 16;
@@ -210,23 +209,15 @@
             this.otsi_fail_click.UseVisualStyleBackColor = true;
             this.otsi_fail_click.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button8
+            // pood_click
             // 
-            this.button8.Location = new System.Drawing.Point(473, 259);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 17;
-            this.button8.Text = "Pood";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // textBox5
-            // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(554, 262);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(85, 20);
-            this.textBox5.TabIndex = 18;
+            this.pood_click.Location = new System.Drawing.Point(337, 259);
+            this.pood_click.Name = "pood_click";
+            this.pood_click.Size = new System.Drawing.Size(75, 23);
+            this.pood_click.TabIndex = 17;
+            this.pood_click.Text = "Pood";
+            this.pood_click.UseVisualStyleBackColor = true;
+            this.pood_click.Click += new System.EventHandler(this.button8_Click);
             // 
             // Kat_box1
             // 
@@ -254,8 +245,7 @@
             this.ClientSize = new System.Drawing.Size(962, 573);
             this.Controls.Add(this.naitabtn);
             this.Controls.Add(this.Kat_box1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.pood_click);
             this.Controls.Add(this.otsi_fail_click);
             this.Controls.Add(this.puhustaBTN);
             this.Controls.Add(this.kustutabtn);
@@ -301,8 +291,7 @@
         private System.Windows.Forms.Button kustutabtn;
         private System.Windows.Forms.Button puhustaBTN;
         private System.Windows.Forms.Button otsi_fail_click;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button pood_click;
         private System.Windows.Forms.ComboBox Kat_box1;
         private System.Windows.Forms.Button naitabtn;
     }

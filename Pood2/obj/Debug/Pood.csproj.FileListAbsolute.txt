@@ -11,3 +11,4 @@ C:\Users\opilane\Source\Repos\Pood2\Pood2\obj\Debug\Pood.csproj.CoreCompileInput
 C:\Users\opilane\Source\Repos\Pood2\Pood2\obj\Debug\Pood.exe
 C:\Users\opilane\Source\Repos\Pood2\Pood2\obj\Debug\Pood.pdb
 C:\Users\opilane\Source\Repos\Pood2\Pood2\obj\Debug\Pood.exe.config
+C:\Users\opilane\Source\Repos\Pood2\Pood2\obj\Debug\Pood.Form2.resources
