@@ -18,8 +18,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace Pood
 {
     public partial class Form1 : Form
-    {
-       string extension = null;
+    {   int balance = 0;
+        string extension = null;
         //C:\Users\opilane\Source\Repos\Pood2\Pood2\Tooded_DB.mdf
         SqlConnection connect = new SqlConnection(
     @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Tooded_DB.mdf;Integrated Security=True");
@@ -257,41 +257,50 @@ namespace Pood
                 Hind_txt.Text.Trim() != string.Empty &&
                 Kat_box1.SelectedItem != null)
             {
+                if (open == null || string.IsNullOrEmpty(open.FileName))
+                {
+                    MessageBox.Show("Palun vali esmalt toote pilt!", "Viga", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 try
                 {
-                    if (open == null || string.IsNullOrEmpty(open.FileName))
+                    using (SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Tooded_DB.mdf;Integrated Security=True"))
                     {
-                        MessageBox.Show("Palun vali esmalt toote pilt!", "Viga", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
+                        conn.Open();
+
+                        int Id;
+                        using (SqlCommand cmd = new SqlCommand("SELECT Id FROM KategooriaTabel WHERE Kategooria_nimetus=@kat", conn))
+                        {
+                            cmd.Parameters.AddWithValue("@kat", Kat_box1.Text);
+                            Id = Convert.ToInt32(cmd.ExecuteScalar());
+                        }
+
+                        using (SqlCommand cmd = new SqlCommand(
+                            "INSERT INTO ToodeTabel (Toodenimetus, Kogus, Hind, Pilt, BPilt, Kategooriad) " +
+                            "VALUES (@toode, @kogus, @hind, @pilt, @bpilt, @kat)", conn))
+                        {
+                            cmd.Parameters.AddWithValue("@toode", Toode_txt.Text);
+                            cmd.Parameters.AddWithValue("@kogus", Kogus_txt.Text);
+                            cmd.Parameters.AddWithValue("@hind", Hind_txt.Text);
+
+                            string extension = Path.GetExtension(open.FileName);
+                            cmd.Parameters.AddWithValue("@pilt", Toode_txt.Text + extension);
+
+                            byte[] imageData = File.ReadAllBytes(open.FileName);
+                            cmd.Parameters.AddWithValue("@bpilt", imageData);
+
+                            cmd.Parameters.AddWithValue("@kat", Id);
+
+                            cmd.ExecuteNonQuery();
+                        }
                     }
 
-                    connect.Open();
-
-                    SqlCommand command = new SqlCommand(
-                        "SELECT Id FROM KategooriaTabel WHERE Kategooria_nimetus=@kat", connect);
-                    command.Parameters.AddWithValue("@kat", Kat_box1.Text);
-                    int Id = Convert.ToInt32(command.ExecuteScalar());
-
-                    command = new SqlCommand(
-                        "INSERT INTO ToodeTabel (Toodenimetus, Kogus, Hind, Pilt, BPilt, Kategooriad) " +
-                        "VALUES (@toode, @kogus, @hind, @pilt, @bpilt, @kat)", connect);
-
-                    command.Parameters.AddWithValue("@toode", Toode_txt.Text);
-                    command.Parameters.AddWithValue("@kogus", Kogus_txt.Text);
-                    command.Parameters.AddWithValue("@hind",Hind_txt.Text);
-
-                    string extension = Path.GetExtension(open.FileName);
-                    command.Parameters.AddWithValue("@pilt", Toode_txt.Text + extension);
-
-                    byte[] imageData = File.ReadAllBytes(open.FileName);
-                    command.Parameters.AddWithValue("@bpilt", imageData);
-                    command.Parameters.AddWithValue("@kat", Id);
-
-                    command.ExecuteNonQuery();
-                    connect.Close();
-
                     NaitaAndmed();
-                    Balance();
+
+                    // Исправлено на balanceLabel
+                    balance += 10;
+                    label6.Text = balance + " €";
                 }
                 catch (Exception ex)
                 {
@@ -303,6 +312,7 @@ namespace Pood
                 MessageBox.Show("Palun täida kõik väljad!", "Viga", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
 
         private void kustutabtn_Click(object sender, EventArgs e)
         {

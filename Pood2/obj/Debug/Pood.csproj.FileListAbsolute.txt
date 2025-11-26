@@ -12,3 +12,16 @@ C:\Users\opilane\Source\Repos\Pood2\Pood2\obj\Debug\Pood.exe
 C:\Users\opilane\Source\Repos\Pood2\Pood2\obj\Debug\Pood.pdb
 C:\Users\opilane\Source\Repos\Pood2\Pood2\obj\Debug\Pood.exe.config
 C:\Users\opilane\Source\Repos\Pood2\Pood2\obj\Debug\Pood.Form2.resources
+C:\Users\nekit\Downloads\Pood2\bin\Debug\Tooded_DB.mdf
+C:\Users\nekit\Downloads\Pood2\bin\Debug\Tooded_DB_log.ldf
+C:\Users\nekit\Downloads\Pood2\bin\Debug\Pood.exe.config
+C:\Users\nekit\Downloads\Pood2\bin\Debug\Pood.exe
+C:\Users\nekit\Downloads\Pood2\bin\Debug\Pood.pdb
+C:\Users\nekit\Downloads\Pood2\obj\Debug\Pood.csproj.AssemblyReference.cache
+C:\Users\nekit\Downloads\Pood2\obj\Debug\Pood.Form1.resources
+C:\Users\nekit\Downloads\Pood2\obj\Debug\Pood.Form2.resources
+C:\Users\nekit\Downloads\Pood2\obj\Debug\Pood.Properties.Resources.resources
+C:\Users\nekit\Downloads\Pood2\obj\Debug\Pood.csproj.GenerateResource.cache
+C:\Users\nekit\Downloads\Pood2\obj\Debug\Pood.csproj.CoreCompileInputs.cache
+C:\Users\nekit\Downloads\Pood2\obj\Debug\Pood.exe
+C:\Users\nekit\Downloads\Pood2\obj\Debug\Pood.pdb
