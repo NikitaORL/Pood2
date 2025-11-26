@@ -104,6 +104,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Image\55555.jpg" />
+    <Content Include="Image\nikita.png" />
+    <Content Include="Image\piim.jpg" />
     <Content Include="Tooded_DB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

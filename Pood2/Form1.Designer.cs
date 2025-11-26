@@ -49,6 +49,7 @@
             this.pood_click = new System.Windows.Forms.Button();
             this.Kat_box1 = new System.Windows.Forms.ComboBox();
             this.naitabtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.toode_pb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -238,11 +239,21 @@
             this.naitabtn.UseVisualStyleBackColor = true;
             this.naitabtn.Click += new System.EventHandler(this.naitabtn_Click);
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 42);
+            this.label1.TabIndex = 21;
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 573);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.naitabtn);
             this.Controls.Add(this.Kat_box1);
             this.Controls.Add(this.pood_click);
@@ -294,6 +305,7 @@
         private System.Windows.Forms.Button pood_click;
         private System.Windows.Forms.ComboBox Kat_box1;
         private System.Windows.Forms.Button naitabtn;
+        private System.Windows.Forms.Label label1;
     }
 }
 

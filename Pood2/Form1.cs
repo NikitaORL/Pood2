@@ -13,13 +13,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Input;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Pood
 {
     public partial class Form1 : Form
     {
        string extension = null;
-
+        //C:\Users\opilane\Source\Repos\Pood2\Pood2\Tooded_DB.mdf
         SqlConnection connect = new SqlConnection(
     @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Tooded_DB.mdf;Integrated Security=True");
         SqlDataAdapter adapter_toode, adapter_kategooria;
@@ -52,7 +53,7 @@ namespace Pood
             Kogus_txt.Text = "";
             Hind_txt.Text = "";
             Kat_box1.SelectedItem = null;
-            using (FileStream fs = new FileStream(Path.Combine(Path.GetFullPath(@"..\..\images"), "nikita.png"), FileMode.Open, FileAccess.Read))
+            using (FileStream fs = new FileStream(Path.Combine(Path.GetFullPath(@"..\..\Image"), "nikita.png"), FileMode.Open, FileAccess.Read))
             {
                 toode_pb.Image = Image.FromStream(fs);
             }
@@ -67,7 +68,7 @@ namespace Pood
             open.Multiselect = true;
             open.Filter = "Images Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
 
-            FileInfo open_info = new FileInfo(@"C:\Users\opilane\source\repos\Pood2\Pood2/images" + open.FileName);
+            FileInfo open_info = new FileInfo(@"C:\Users\opilane\source\repos\Pood2\Pood2/Image" + open.FileName);
             if (open.ShowDialog() == DialogResult.OK && Toode_txt.Text != null)
             {
                 save = new SaveFileDialog();
@@ -144,7 +145,7 @@ namespace Pood
                 }
             }
             dataGridView1.Columns.Add(combo_kat);
-            toode_pb.Image = Image.FromFile(Path.Combine(Path.GetFullPath(@"..\..\images"), "nikita.png"));
+            toode_pb.Image = Image.FromFile(Path.Combine(Path.GetFullPath(@"..\..\Image"), "nikita.png"));
             connect.Close();
         }
         private void lisaKATbtn_Click(object sender, EventArgs e)
@@ -290,6 +291,7 @@ namespace Pood
                     connect.Close();
 
                     NaitaAndmed();
+                    Balance();
                 }
                 catch (Exception ex)
                 {
@@ -414,7 +416,7 @@ namespace Pood
                     if (fail["Pilt"] != DBNull.Value)
                     {
                         PictureBox pictureBox = new PictureBox();
-                        pictureBox.Image = Image.FromFile(@"..\..\Images\" + fail["Pilt"].ToString());
+                        pictureBox.Image = Image.FromFile(@"..\..\Image\" + fail["Pilt"].ToString());
                         pictureBox.Width = pictureBox.Height = 100;
                         pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                         pictureBox.Location = new System.Drawing.Point(c, r);
@@ -455,6 +457,20 @@ namespace Pood
             }
             connect.Close();
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        public void Balance()
+        {
+            string balance = label1.Text; 
+            label1.Text = "5";
+            MessageBox.Show("Palk:", balance);
+        }
+
+
         private void button8_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();

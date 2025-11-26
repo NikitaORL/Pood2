@@ -51,6 +51,7 @@
             this.dataGridViewPood.Name = "dataGridViewPood";
             this.dataGridViewPood.Size = new System.Drawing.Size(570, 307);
             this.dataGridViewPood.TabIndex = 2;
+            this.dataGridViewPood.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPood_CellContentClick);
             // 
             // Form2
             // 
